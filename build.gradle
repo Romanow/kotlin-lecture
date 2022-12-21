@@ -1,0 +1,21 @@
+plugins {
+    id "idea"
+    id "org.jetbrains.kotlin.jvm" version "1.7.10"
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+[compileKotlin, compileTestKotlin]*.kotlinOptions*.jvmTarget = "11"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+}
